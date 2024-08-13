@@ -84,8 +84,10 @@ class _NewExpenseState extends State<NewExpense> {
 
   @override
   Widget build(BuildContext context) {
+    final keyboardSpace = MediaQuery.of(context).viewInsets.bottom;
+
     return Padding(
-      padding: const EdgeInsets.fromLTRB(15, 60, 15, 15),
+      padding: EdgeInsets.fromLTRB(15, 60, 15, keyboardSpace + 15),
       child: Column(
         children: [
           TextField(
