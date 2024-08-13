@@ -18,11 +18,13 @@ class _ExspensesState extends State<Expenses> {
 
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
+      useSafeArea: true,
       isScrollControlled: true,
       context: context,
       builder: (ctx) => NewExpense(
         onAddExpense: _addExpense,
       ),
+      constraints: const BoxConstraints(maxWidth: double.infinity),
     );
   }
 
